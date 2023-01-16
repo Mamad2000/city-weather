@@ -1,0 +1,115 @@
+/* Link to bootstrap icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+
+/* Overall page styling */
+
+html {
+    background-color: darkgray;
+}
+
+body {
+    font-family: 'Roboto Condensed', Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#mainPage {
+    text-decoration: none;
+    color: rgb(238, 238, 238);
+    font-weight: 500;
+    font-size: 30px;
+    padding-left: 40%;
+    
+}
+
+#mainPage:hover {
+    transition: 0.8s;
+    color:rgb(241, 185, 255)
+}
+
+#navbar-options {
+    color: rgb(238, 238, 238);
+    margin-left: 50px;
+}
+
+#navbar-options:hover {
+    transition: 0.8s;
+    color:rgb(241, 185, 255)
+}
+
+#favourites-btn {
+    color: rgb(238, 238, 238);
+    margin-left: 50px;
+}
+
+#favourites-btn:hover {
+    transition: 0.8s;
+    color:rgb(241, 185, 255)
+}
+
+/* Increase size and remove padding of favorite star */
+
+.bi-star {
+   
+   font-size: x-large;
+   padding: 0em;
+}
+
+/* Favorite star changes to yellow on hover */
+
+.bi-star:hover {
+    color: yellow;
+}
+
+/* Increase size, remove padding and change color
+of filled favorite star. */
+
+.bi-star-fill {
+
+    color: yellow;
+    font-size: x-large;
+    padding: 0em;
+}
+
+/* Limit the width of the recipe title to allow
+for favorite star */
+
+.card-title {
+    width: 80%;
+}
+
+/* Modify padding and add relative position to 
+allow for absolute position of favorite star */
+
+.card-body {
+    padding: 1rem 0rem;
+    position: relative;
+}
+
+/* modify styling of recipe title heading
+to allow for positioning of favorite star */
+
+.card-body h5 {
+    margin: 0%;
+    display: inline-block;
+}
+
+/* styling and positioning of favorite button*/
+
+.card-body button {
+
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    padding: 2px 1px;
+    border: none;
+    background-color: white;
+
+}
+
+/* styling for method pages */
+
+#recipeImg {
+    border: 40em;
+    border-radius: 40px;
+    width: 500px
+}
