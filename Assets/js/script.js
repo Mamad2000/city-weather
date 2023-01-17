@@ -100,7 +100,7 @@ function displayGeoCode (coord) {
             cardImg.src = "../images/London.jpg";
         } else if (coord[0].name === "Tehran") { 
             callFiveDayWeatherApi(weatherEl, cardBodyDivEl);
-            cardImg.src = "../images/Tehran.jpg";
+            cardImg.src = ".//images/Tehran.jpg";
         } else if (coord[0].name === "Madrid") {
             callFiveDayWeatherApi(weatherEl, cardBodyDivEl);
             cardImg.src = "../images/Madrid.jpg";
