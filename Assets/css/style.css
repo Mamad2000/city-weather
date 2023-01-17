@@ -5,7 +5,7 @@
 /* Overall page styling */
 
 html {
-    background-color: darkgray;
+    background-color: rgb(169, 169, 169);
 }
 
 body {
@@ -17,10 +17,10 @@ body {
     color: rgb(238, 238, 238);
     font-weight: 500;
     font-size: 30px;
-    padding-left: 80%;
+    padding-left: 0px;
     margin: 0;
     justify-items: center;
-    margin-left: 100%;
+    margin-left: 20px;
     
 }
 

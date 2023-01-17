@@ -12,7 +12,7 @@ let london = "London";
 let tehran = "Tehran";
 let chicago = "Chicago";
 let madrid = "Madrid";
-
+let sydney = "Sydney";
 var geoCodeApi = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
 var fiveDayApi = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
 
@@ -21,6 +21,7 @@ function init() {
     displayTehranGeoCode();
     displayMadridGeoCode();
     displayChicagoGeoCode();
+    displaySydneyGeoCode();
 }
 
 
@@ -106,6 +107,10 @@ function displayGeoCode (coord) {
         } else if (coord[0].name === "Chicago") {
             callFiveDayWeatherApi(weatherEl, cardBodyDivEl);
             cardImg.src = "../images/Chicago.jpg";
+        } else if (coord[0].name === "Sydney") {
+            callFiveDayWeatherApi(weatherEl, cardBodyDivEl);
+            cardImg.src = "../images/Sydney.jpg";
+
         }
 
      
@@ -125,7 +130,7 @@ function displayGeoCode (coord) {
 
 function displayWeatherInfo(dataPassedIn, weatherEl, cardBodyDivEl) {
     weatherEl.setAttribute("class", "card-weather");
-    weatherEl.textContent = "Temperature: " + dataPassedIn.list[0].main.temp
+    weatherEl.textContent = "Temperature: " +dataPassedIn.list[0].main.temp + "℉\r\n" + "Weather conditions: " + "\r\n" +dataPassedIn.list[0].weather[0].description + "\r\n" + "Humidity: " + dataPassedIn.list[0].main.humidity + '\r\n' + "   Wind speed:   " + dataPassedIn.list[0].wind.speed
     cardBodyDivEl.appendChild(weatherEl);
 
     return;
@@ -153,6 +158,11 @@ function displayMadridGeoCode(coord) {
 
 function displayChicagoGeoCode(coord) {
     geoCodeApi = `http://api.openweathermap.org/geo/1.0/direct?q=${chicago}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
+    callGeoCodingApi(coord);
+}
+
+function displaySydneyGeoCode(coord) {
+    geoCodeApi = `http://api.openweathermap.org/geo/1.0/direct?q=${sydney}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
     callGeoCodingApi(coord);
 }
 
