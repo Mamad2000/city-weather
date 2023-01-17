@@ -17,13 +17,16 @@ body {
     color: rgb(238, 238, 238);
     font-weight: 500;
     font-size: 30px;
-    padding-left: 40%;
+    padding-left: 80%;
+    margin: 0;
+    justify-items: center;
+    margin-left: 100%;
     
 }
 
 #mainPage:hover {
     transition: 0.8s;
-    color:rgb(241, 185, 255)
+    color:rgb(185, 139, 23)
 }
 
 #navbar-options {
@@ -33,7 +36,7 @@ body {
 
 #navbar-options:hover {
     transition: 0.8s;
-    color:rgb(241, 185, 255)
+    color:rgb(185, 139, 23)
 }
 
 #favourites-btn {
@@ -41,34 +44,6 @@ body {
     margin-left: 50px;
 }
 
-#favourites-btn:hover {
-    transition: 0.8s;
-    color:rgb(241, 185, 255)
-}
-
-/* Increase size and remove padding of favorite star */
-
-.bi-star {
-   
-   font-size: x-large;
-   padding: 0em;
-}
-
-/* Favorite star changes to yellow on hover */
-
-.bi-star:hover {
-    color: yellow;
-}
-
-/* Increase size, remove padding and change color
-of filled favorite star. */
-
-.bi-star-fill {
-
-    color: yellow;
-    font-size: x-large;
-    padding: 0em;
-}
 
 /* Limit the width of the recipe title to allow
 for favorite star */
@@ -112,4 +87,21 @@ to allow for positioning of favorite star */
     border: 40em;
     border-radius: 40px;
     width: 500px
+    
 }
+
+.img-fluid {
+    /* height: fit-content; */
+    /* width: fit-content; */
+    min-width: 200px;
+    min-height: 200px
+    
+}
+
+#card-container {
+    border: 20px;
+    border-color: darkgray;
+    border-style: solid
+}
+
+
