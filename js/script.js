@@ -13,8 +13,8 @@ let tehran = "Tehran";
 let chicago = "Chicago";
 let madrid = "Madrid";
 let sydney = "Sydney";
-var geoCodeApi = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
-var fiveDayApi = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
+var geoCodeApi = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
+var fiveDayApi = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
 
 function init() {
     displayLondonGeoCode();
@@ -92,12 +92,12 @@ function displayGeoCode (coord) {
         lat = coord[0].lat;
         cardLongEl.textContent = "Longitude:" + coord[0].lon;
         lon = coord[0].lon;
-        fiveDayApi = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
+        fiveDayApi = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
         console.log(fiveDayApi);
         
         if (coord[0].name === "London") { 
             callFiveDayWeatherApi(weatherEl, cardBodyDivEl);
-            cardImg.src = "../../..//city-weather/Assets/images/London.jpg";
+            cardImg.src = "../assets/images/London.jpg";
         } else if (coord[0].name === "Tehran") { 
             callFiveDayWeatherApi(weatherEl, cardBodyDivEl);
             cardImg.src = "../images/Tehran.jpg";
@@ -109,7 +109,7 @@ function displayGeoCode (coord) {
             cardImg.src = "../images/Chicago.jpg";
         } else if (coord[0].name === "Sydney") {
             callFiveDayWeatherApi(weatherEl, cardBodyDivEl);
-            cardImg.src = "../images/Sydney.jpg";
+            cardImg.src = "../../images/1722072.jpg";
 
         }
 
@@ -138,7 +138,7 @@ function displayWeatherInfo(dataPassedIn, weatherEl, cardBodyDivEl) {
 }
 
 function displayLondonGeoCode (coord) {
-    geoCodeApi = `http://api.openweathermap.org/geo/1.0/direct?q=${london}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
+    geoCodeApi = `https://api.openweathermap.org/geo/1.0/direct?q=${london}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
     callGeoCodingApi(coord);
 
 
@@ -146,29 +146,29 @@ function displayLondonGeoCode (coord) {
 }
 
 function displayTehranGeoCode(coord) {
-    geoCodeApi = `http://api.openweathermap.org/geo/1.0/direct?q=${tehran}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
+    geoCodeApi = `https://api.openweathermap.org/geo/1.0/direct?q=${tehran}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
     callGeoCodingApi(coord);
 
 }
 
 function displayMadridGeoCode(coord) {
-    geoCodeApi = `http://api.openweathermap.org/geo/1.0/direct?q=${madrid}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
+    geoCodeApi = `https://api.openweathermap.org/geo/1.0/direct?q=${madrid}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
     callGeoCodingApi(coord);
 }
 
 function displayChicagoGeoCode(coord) {
-    geoCodeApi = `http://api.openweathermap.org/geo/1.0/direct?q=${chicago}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
+    geoCodeApi = `https://api.openweathermap.org/geo/1.0/direct?q=${chicago}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
     callGeoCodingApi(coord);
 }
 
 function displaySydneyGeoCode(coord) {
-    geoCodeApi = `http://api.openweathermap.org/geo/1.0/direct?q=${sydney}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
+    geoCodeApi = `https://api.openweathermap.org/geo/1.0/direct?q=${sydney}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
     callGeoCodingApi(coord);
 }
 
 
 TitleBtn.addEventListener('click', function () {
-    document.location = ("../../index.html")
+    document.location = ("../index.html")
 });
 
 init();
