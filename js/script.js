@@ -97,19 +97,19 @@ function displayGeoCode (coord) {
         
         if (coord[0].name === "London") { 
             callFiveDayWeatherApi(weatherEl, cardBodyDivEl);
-            cardImg.src = "../assets/images/London.jpg";
+            cardImg.src = "https://wallpaperaccess.com/full/32512.jpg";
         } else if (coord[0].name === "Tehran") { 
             callFiveDayWeatherApi(weatherEl, cardBodyDivEl);
-            cardImg.src = "../images/Tehran.jpg";
+            cardImg.src = "https://wallpaperaccess.com/full/1291453.jpg";
         } else if (coord[0].name === "Madrid") {
             callFiveDayWeatherApi(weatherEl, cardBodyDivEl);
-            cardImg.src = "../images/Madrid.jpg";
+            cardImg.src = "https://wallpaperaccess.com/full/1149951.jpg";
         } else if (coord[0].name === "Chicago") {
             callFiveDayWeatherApi(weatherEl, cardBodyDivEl);
-            cardImg.src = "../images/Chicago.jpg";
+            cardImg.src = "https://wallpaperaccess.com/full/199945.jpg";
         } else if (coord[0].name === "Sydney") {
             callFiveDayWeatherApi(weatherEl, cardBodyDivEl);
-            cardImg.src = "../../images/1722072.jpg";
+            cardImg.src = "https://wallpaperaccess.com/full/1722072.jpg";
 
         }
 
