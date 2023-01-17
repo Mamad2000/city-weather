@@ -100,7 +100,7 @@ function displayGeoCode (coord) {
             cardImg.src = "../images/London.jpg";
         } else if (coord[0].name === "Tehran") { 
             callFiveDayWeatherApi(weatherEl, cardBodyDivEl);
-            cardImg.src = ".//images/Tehran.jpg";
+            cardImg.src = "../images/Tehran.jpg";
         } else if (coord[0].name === "Madrid") {
             callFiveDayWeatherApi(weatherEl, cardBodyDivEl);
             cardImg.src = "../images/Madrid.jpg";
@@ -130,7 +130,7 @@ function displayGeoCode (coord) {
 
 function displayWeatherInfo(dataPassedIn, weatherEl, cardBodyDivEl) {
     weatherEl.setAttribute("class", "card-weather");
-    weatherEl.textContent = "Temperature: " +dataPassedIn.list[0].main.temp + "℉\r\n" + "Weather conditions: " + "\r\n" +dataPassedIn.list[0].weather[0].description + "\r\n" + "Humidity: " + dataPassedIn.list[0].main.humidity + '\r\n' + "   Wind speed:   " + dataPassedIn.list[0].wind.speed
+    weatherEl.textContent = "Temperature: " +dataPassedIn.list[0].main.temp + "Kelvin\r\n" + "Weather conditions: " + "\r\n" +dataPassedIn.list[0].weather[0].description + "\r\n" + "Humidity: " + dataPassedIn.list[0].main.humidity + '\r\n' + "   Wind speed:   " + dataPassedIn.list[0].wind.speed
     cardBodyDivEl.appendChild(weatherEl);
 
     return;

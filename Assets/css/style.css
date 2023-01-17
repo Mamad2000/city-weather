@@ -105,3 +105,11 @@ to allow for positioning of favorite star */
 }
 
 
+.form-control {
+    margin: 20px;
+    margin-right: 0px !important;
+}
+
+.btn {
+    margin: 20px;
+}
