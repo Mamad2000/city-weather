@@ -13,6 +13,7 @@ let tehran = "Tehran";
 let chicago = "Chicago";
 let madrid = "Madrid";
 let sydney = "Sydney";
+let kordan = "Kordan";
 var geoCodeApi = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
 var fiveDayApi = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
 
@@ -22,6 +23,7 @@ function init() {
     displayMadridGeoCode();
     displayChicagoGeoCode();
     displaySydneyGeoCode();
+    displayKordanGeoCode();
 }
 
 
@@ -111,6 +113,9 @@ function displayGeoCode (coord) {
             callFiveDayWeatherApi(weatherEl, cardBodyDivEl);
             cardImg.src = "https://wallpaperaccess.com/full/1722072.jpg";
 
+        } else if (coord[0].name === "Kordan") {
+            callFiveDayWeatherApi(weatherEl, cardBodyDivEl);
+            cardImg.src = "https://iranparadise.com/wp-content/uploads/2020/08/historical-village.png";
         }
 
      
@@ -130,7 +135,9 @@ function displayGeoCode (coord) {
 
 function displayWeatherInfo(dataPassedIn, weatherEl, cardBodyDivEl) {
     weatherEl.setAttribute("class", "card-weather");
-    weatherEl.textContent = "Temperature: " +dataPassedIn.list[0].main.temp + "Kelvin\r\n" + "Weather conditions: " + "\r\n" +dataPassedIn.list[0].weather[0].description + "\n" + "Humidity: " + dataPassedIn.list[0].main.humidity + ' ``````````````````````````````````````' + "   Wind speed:   " + dataPassedIn.list[0].wind.speed
+    var temperatureInKelvin = dataPassedIn.list[0].main.temp;
+    var temperatureInCelsius = temperatureInKelvin - 273.15;
+    weatherEl.textContent = "Temperature: " + temperatureInCelsius + "℃ ````````````````````````````````````````\r\n" + "Weather conditions: " + "\r\n" +dataPassedIn.list[0].weather[0].description + "\n" + "Humidity: " + dataPassedIn.list[0].main.humidity + ' ``````````````````````````````````````' + "   Wind speed:   " + dataPassedIn.list[0].wind.speed
     cardBodyDivEl.appendChild(weatherEl);
 
     return;
@@ -163,6 +170,11 @@ function displayChicagoGeoCode(coord) {
 
 function displaySydneyGeoCode(coord) {
     geoCodeApi = `https://api.openweathermap.org/geo/1.0/direct?q=${sydney}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
+    callGeoCodingApi(coord);
+}
+
+function displayKordanGeoCode(coord) {
+    geoCodeApi = `https://api.openweathermap.org/geo/1.0/direct?q=${kordan}&appid=67ee7ea9afb0c0bdbb00b6327f4bd08d`;
     callGeoCodingApi(coord);
 }
 
